@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="Spectre" ng-cloak>
+    <head>
+        <meta charset="utf-8">
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <title>basic</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+        
+        <script>L_PREFER_CANVAS = true;</script>
+        <!-- injector:js -->
+        <script src="dist/reaper.min.js"></script>
+        <!-- endinjector -->
+    </head>
+    <body ng-controller="coreMainCtrl">
+        <ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="false" >
+            <li data-ng-repeat="pic in pics" class="grid">
+             <img src="{{pic}}" class="grid-img" data-actual-width = "{{pic.actualWidth}}"  data-actual-height="{{pic.actualHeight}}" />
+            </li>
+        </ul>
+        <!--<div id="map"></div>-->
+    </body>
+    <script type="text/javascript" src="modules/core/config/core.main.config.js"></script>
+    <script type="text/javascript" src="modules/core/controllers/core.main.controller.js"></script>
+    <!--<script type="text/javascript" src="modules/masonry/directives/masonry.main.directive.js"></script>-->
+</html>
