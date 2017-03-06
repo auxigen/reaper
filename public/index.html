@@ -9,15 +9,38 @@
         
         <script>L_PREFER_CANVAS = true;</script>
         <!-- injector:js -->
-        <script src="dist/reaper.min.js"></script>
+        
+        <script src="dist/reaper.js"></script>
+        
         <!-- endinjector -->
     </head>
     <body ng-controller="coreMainCtrl">
-        <ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="false" >
-            <li data-ng-repeat="pic in pics" class="grid">
-             <img src="{{pic}}" class="grid-img" data-actual-width = "{{pic.actualWidth}}"  data-actual-height="{{pic.actualHeight}}" />
+        <div infinite-scroll="loadMore()" infinite-scroll-distance="3" style="height: 100%; width: 100%">
+            <md-card data-ng-repeat="image in images" class="grid">
+                <img ng-src="{{image.media.m}}" class="grid-img" data-actual-width = "{{image.actualWidth}}"  data-actual-height="{{image.actualHeight}}" />
+                <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button" aria-label="Favorite">
+                <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Share">
+                <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+                </md-button>
+                </md-card-actions>
+            </md-card>
+            
+        <!--  
+        <ul class="dynamic-grid" angular-grid="images" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="false" >
+            <li data-ng-repeat="image in images" class="grid">
+             
+                <div>test</div>
             </li>
         </ul>
+        -->
+        <div ng-if="busy">BUSY</div>
+        </div>
         <!--<div id="map"></div>-->
     </body>
     <script type="text/javascript" src="modules/core/config/core.main.config.js"></script>

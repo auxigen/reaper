@@ -18,11 +18,13 @@ module.exports = function(grunt) {
                         "public/node_modules/angular/angular.js",
                         "public/node_modules/angular-aria/angular-aria.js",
                         "public/node_modules/angular-animate/angular-animate.js",
+                        "public/node_modules/angular-resource/angular-resource.js",
                         "public/node_modules/angular-material/angular-material.js",
                         "public/node_modules/angulargrid/angulargrid.js",
                         "public/node_modules/d3/d3.js",
                         "public/node_modules/nvd3/build/nv.d3.js",
-                        "public/node_modules/leaflet/dist/leaflet-src.js"
+                        "public/node_modules/leaflet/dist/leaflet-src.js",
+                        "public/node_modules/ng-infinite-scroll/build/ng-infinite-scroll.js"
                         //"public/node_modules/angular-nvd3/src/angular-nvd3.js"
                 ],
                 dest: "public/dist/<%= pkg.name %>.js",
